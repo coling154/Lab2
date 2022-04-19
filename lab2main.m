@@ -1,9 +1,10 @@
 clear;
 T_set = 22; % thermostat set temperature [degC]
-T_outside = 15; % outside temperature [degC]
+%T_outside = 15; % outside temperature [degC]
 ts = 0.01; % sample time [hr]
 
-t=0:ts:10;
+%t=0:ts:10;
+load('T_outside.mat');
 
 %initilise arrays
 y_k=zeros(1,length(t));
@@ -22,7 +23,7 @@ for i=2:length(t)
         y_k(i)=y_k(i-1);
     end
     heat_gain(i)=heater(y_k(i),T_room(i-1));
-    T_room(i)=room(heat_gain(i),T_room(i-1),T_outside,ts);
+    T_room(i)=room(heat_gain(i),T_room(i-1),T_outside(i-1),ts);
 end
 
 %% plot
