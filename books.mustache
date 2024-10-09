@@ -1,1 +1,18 @@
-{{! TODO: UI section displaying book should be displayed here using mustache template }}
+<div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+    <div class="card">
+        <img class="card-img-top" height="160px" style="object-fit: cover; object-position: center"
+             src="https://raw.githubusercontent.com/benoitvallon/100-best-books/master/static/{{imageLink}}"
+             alt="{{title}}">
+        <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">
+                By {{author}}
+                from {{country}}, written in
+                {{language}} language with
+                {{pages}} number of pages.<br/>
+                Published on {{year}}
+            </p>
+            <a target="_blank" href="{{link}}" class="btn btn-primary">Open</a>
+        </div>
+    </div>
+</div>

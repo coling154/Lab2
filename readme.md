@@ -6,3 +6,6 @@ The goal of this lab is to gain an understanding into web templating with mustac
 #### John Parker
 #### Matthew Parent
 #### Jordan Dales
+## How to start
+1. Install apache web server on XAMPP
+2. Clone root into htdocs
