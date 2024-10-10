@@ -1,12 +1,26 @@
 $( document ).ready(function() {
+    $('#starter').html('<div id="loading">Loading...</div>');
     fetchData();
 });
 
 function fetchData() {
-    //TODO: write AJAX code to fetch the data from service.php. On successful response, call renderbooks() and pass the received books data
+    
+    $.ajax({
+        url: 'service.php',
+        type: 'GET',
+        success: function (response) {
+            var booksData = JSON.parse(response);
+
+            renderBooks(booksData);
+        },
+    });
 }
 
 function renderBooks(booksData) {
-    //TODO: use mustache to render booksData and books.mustache into #tarter
+    $.get('books.mustache', function (template) {
+        var rendered = Mustache.render(template, { books: booksData });
+
+        $('#starter').html(rendered);
+    });
 }
 
