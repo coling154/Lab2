@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-p
+
     <title>List of Books</title>
     <script src="https://cdn.jsdelivr.net/npm/mustache@latest/mustache.min.js"></script>
 </head>
@@ -14,10 +14,12 @@ p
     <p>
         This page to see the 100 best classical books of all time.
     </p>
+    <div class="content">
+        <div class="row">
+            {{#books}}
+                {{> books}}
+            {{/books}}
+        </div>
     </div>
-    <div id="books-list" class="row mt-4">
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/mustache@latest/mustache.min.js"></script>
-    <script src="app.js"></script>
+</div>
 </body>
-</html>
